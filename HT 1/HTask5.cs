@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace ClassLibrary1
 {
@@ -9,40 +10,49 @@ namespace ClassLibrary1
     [TestFixture]
     public class Task_5
     {
-        public string UpperAndSort(string guests)
+        static string UpperAndSort(string words)
         {
-            try
+            if (words.Length == 0) { return ""; }
+            string[] subs = words.Split(";");
+            List<string> all = new List<string>();
+            List<string> all2 = new List<string>();
+            var allpersons = new List<string>();
+            foreach (var sub in subs)
             {
-                string[] str = guests.Split(';');
-                string[,] newStr = new string[str.Length, 2];
-                for (int i = 0; i < str.Length; i++)
-                {
-                    newStr[i, 0] = str[i].Split(':')[1];
-                    newStr[i, 1] = str[i].Split(':')[0];
-                    str[i] = newStr[i, 0] + ", " + newStr[i, 1];
-                }
-                Array.Sort<string>(str, new Comparison<string>((i1, i2) => i1.CompareTo(i2)));
-                string result = ("(" + string.Join(")(", str) + ")").ToUpper();
-                return result;
+                string[] ns = sub.Split(":");
+                var namesurname = string.Join(',', ns[1].ToUpper(), ns[0].ToUpper());
+                all.Add(namesurname);
             }
-            catch (IndexOutOfRangeException)
+
+            all.Sort();
+            foreach (var sub in all)
             {
-                return "";
+                string[] ns = sub.Split(",");
+                var namesurname = string.Join(',', ns[1].ToUpper(), ns[0].ToUpper());
+                all2.Add(namesurname);
             }
+            var result = String.Join(" | ", all2.ToArray());
+            return result;
         }
         [Test]
-        public void UpperAndSortTest1()
+        public void Test1()
         {
-            String s = "Fred:Corwill;Wilfred:Corwill;Barney:TornBull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
-            String expected = "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)";
-            Assert.AreEqual(expected, UpperAndSort(s));
+
+            var words = "Fired:Corwill;Wilfred:Corwill;Barney:TornBull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+            var result = UpperAndSort(words);
+            var expected = "ALFRED,CORWILL | FIRED,CORWILL | RAPHAEL,CORWILL | WILFRED,CORWILL | BARNEY,TORNBULL | BETTY,TORNBULL | BJON,TORNBULL";
+
+            Assert.AreEqual(expected, result);
         }
         [Test]
-        public void UpperAndSortTest2()
+        public void Test2()
         {
-            String s = "               ";
-            String expected = "";
-            Assert.AreEqual(expected, UpperAndSort(s));
+
+            var words = "";
+            var result = UpperAndSort(words);
+            var expected = "";
+
+            Assert.AreEqual(expected, result);
         }
     }
 }

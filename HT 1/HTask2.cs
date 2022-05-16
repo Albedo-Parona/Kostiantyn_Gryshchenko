@@ -1,40 +1,56 @@
 ﻿using NUnit.Framework;
 using System;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace ClassLibrary1
 {
     [TestFixture]
     public class Task_2
     {
-        public char FirstNonRepeatingLetter(string str)
+
+        public char first_non_repeating_letter(string input)
         {
-            string stringHelper = str;
-            str = str.ToLower();
-            for (int i = 0; i < str.Length - 1; i++)
-            {
-                if (!((str.Substring(0, i) + str.Substring(i + 1)).Contains(str[i])))
-                {
-                    return stringHelper[i];
-                }
-            }
-            return ' ';
+
+            input = input.ToLower();
+            char result = input.FirstOrDefault(ch => input.IndexOf(ch) == input.LastIndexOf(ch));
+           
+            return result;
         }
         [Test]
-        public void FirstNonRepeatingLetter1()
+        public void Test1()
         {
-            Assert.AreEqual('T', FirstNonRepeatingLetter("sTreSS"));
+            string list = "stress";
+            var expected = 't';
+            var result = first_non_repeating_letter(list);
+            Assert.AreEqual(expected, result);
         }
         [Test]
-        public void FirstNonRepeatingLetter2()
+        public void Test2()
         {
-            Assert.AreEqual(' ', FirstNonRepeatingLetter("sTreSSret"));
+            string list = "Cccrrww";
+            var expected = '\0';
+            var result = first_non_repeating_letter(list);
+            Assert.AreEqual(expected, result);
+
         }
         [Test]
-        public void FirstNonRepeatingLetter3()
+        public void Test3()
         {
-            Assert.AreEqual('K', FirstNonRepeatingLetter("Kaalluupptt"));
+            string list = "streSS";
+            var expected = 't';
+            var result = first_non_repeating_letter(list);
+            Assert.AreEqual(expected, result);
+
+        }
+        [Test]
+        public void Test4()
+        {
+            string list = "cat";
+            var expected = 'c';
+            var result = first_non_repeating_letter(list);
+            Assert.AreEqual(expected, result);
+
         }
     }
 }

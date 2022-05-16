@@ -7,21 +7,54 @@ namespace ClassLibrary1
     [TestFixture]
     public class Task_Extra
     {
-        public int nextBigger(int input)
+        static void swap(char[] ar, int i, int j)
         {
-            char[] inputStr = input.ToString().ToCharArray();
-            for (int i = inputStr.Length - 1; i > 0; i--)
+            char temp = ar[i];
+            ar[i] = ar[j];
+            ar[j] = temp;
+        }
+
+        static int nextBigger(int re)
+        {
+            string num = re.ToString();
+            char[] ar = new char[num.Length];
+            for (var j = 0; j < num.Length; j++)
             {
-                if ((int)inputStr[i] > (int)inputStr[i - 1])
+                ar[j] = num[j];
+            }
+
+            int n = ar.Length;
+            int i;
+            for (i = n - 1; i > 0; i--)
+            {
+                if (ar[i] > ar[i - 1])
                 {
-                    char tempswap = inputStr[i];
-                    inputStr[i] = inputStr[i - 1];
-                    inputStr[i - 1] = tempswap;
                     break;
                 }
             }
-            int result = Int32.Parse(string.Join("", inputStr));
-            return result != input ? result : -1;
+
+            if (i == 0)
+            {
+                int array1 = -1;
+                return array1;
+            }
+            else
+            {
+                int x = ar[i - 1], min = i;
+                for (int j = i + 1; j < n; j++)
+                {
+                    if (ar[j] > x && ar[j] < ar[min])
+                    {
+                        min = j;
+                    }
+                }
+
+                swap(ar, i - 1, min);
+                Array.Sort(ar, i, n - i);
+                string s = new string(ar);
+                int bar = Int32.Parse(s);
+                return bar;
+            }
         }
         [Test]
         public void nextBiggerTest1()

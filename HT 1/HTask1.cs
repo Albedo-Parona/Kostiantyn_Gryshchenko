@@ -10,17 +10,19 @@ namespace ClassLibrary1
 
     public class Task_1
     {
-        public List<object> GetIntegersFromList(List<object> mixedList)
+        public List<object> GetIntegersFromList(List<object> input)
         {
-            List<object> numbersOnly = new List<object>();
-            for (int i = 0; i < mixedList.Count; i++)
+            var filtered = new List<object>();
+
+            foreach (var word in input)
             {
-                if (mixedList[i].GetType() == typeof(int))
+                if (word is int)
                 {
-                    numbersOnly.Add(mixedList[i]);
+                    filtered.Add(word); ;
                 }
             }
-            return numbersOnly;
+
+            return filtered;
         }
         [Test]
         public void GetIntegersFromListTest1()

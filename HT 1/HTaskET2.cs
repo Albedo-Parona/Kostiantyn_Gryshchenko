@@ -7,32 +7,46 @@ namespace ClassLibrary1
     [TestFixture]
     public class Extra_Task_2
     {
-
-        public string IP_address(long k)
+        public string GetIPv4(uint number)
         {
-            //long x = ((k - k % 256) / 256) % 256); 
-            string[] str1 = { ((k - (((k - k%256 - (((k- k % 256) / (256)))%256)/(256*256))%256) - (((k- k % 256) / (256))%256) - k%256)/(256*256*256)).ToString(),
-                    (((k - k%256 - (((k- k % 256) / (256)))%256)/(256*256))%256).ToString(),
-                    (((k- k % 256) / (256))%256).ToString(),
-                    (k%256).ToString()};
-
-            return string.Join('.', str1);
-        }
-        [Test]
-        public void Test_IP1()
-        {
-            Assert.AreEqual("128.32.10.1", IP_address(2149583361));
+            var ipv4 = new List<string>();
+            var divider = (uint)(Math.Pow(2, 8));
+            for (int i = 0; i < 4; i++)
+            {
+                ipv4.Insert(0, (number % divider).ToString());
+                number /= divider;
+            }
+            return String.Join('.', ipv4);
         }
 
         [Test]
-        public void Test_IP2()
+        public void Test1()
         {
-            Assert.AreEqual("0.0.0.32", IP_address(32));
+            uint list = 0;
+            var expected = "0.0.0.0";
+            var result = GetIPv4(list);
+            Assert.AreEqual(expected, result);
+
         }
         [Test]
-        public void Test_IP3()
+        public void Test2()
         {
-            Assert.AreEqual("0.0.0.0", IP_address(0));
+            uint list = 2149583361;
+            var expected = "128.32.10.1";
+            var result = GetIPv4(list);
+            Assert.AreEqual(expected, result);
+
         }
+        [Test]
+        public void Test3()
+        {
+            uint list = 32;
+            var expected = "0.0.0.32";
+            var result = GetIPv4(list);
+            Assert.AreEqual(expected, result);
+
+        }
+
+
     }
 }

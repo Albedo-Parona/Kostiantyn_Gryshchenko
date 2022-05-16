@@ -7,20 +7,19 @@ namespace ClassLibrary1
     [TestFixture]
     public class Task_4
     {
-        public int getPairs(List<int> inputList, int target)
+
+        static int getPairs(List <int> arr, int sum)
         {
-            int num = 0;
-            for (int i = 0; i < inputList.Count; i++)
-            {
-                for (int j = i + 1; j < inputList.Count; j++)
-                {
-                    if (inputList[i] + inputList[j] == target)
-                    {
-                        num++;
-                    }
-                }
-            }
-            return num;
+
+            int count = 0;
+
+
+            for (int i = 0; i < arr.Count; i++)
+                for (int j = i + 1; j < arr.Count; j++)
+                    if ((arr[i] + arr[j]) == sum)
+                        count++;
+
+            return count;
         }
         [Test]
         public void getPairs1()

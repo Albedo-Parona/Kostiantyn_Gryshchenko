@@ -1,25 +1,27 @@
-﻿using NUnit.Framework;
-using System;
+﻿using System;
+using NUnit.Framework;
 using System.Collections.Generic;
-
+using System.Text;
+using System.Linq;
 namespace ClassLibrary1
 {
     [TestFixture]
     public class Task_3
     {
-        public int digital_root(int input)
+        static int DigitalRoot(long num)
         {
-            if (input < 10)
+            while (num > 9)
             {
-                return input;
+                num = num.ToString().ToCharArray().Sum(x => x - '0');
             }
-            char[] strInput = input.ToString().ToCharArray();
-            int sum = 0;
-            for (int i = 0; i < strInput.Length; i++)
-            {
-                sum += Int32.Parse((strInput[i].ToString()));
-            }
-            return digital_root(sum);
+
+            return (int)num;
+        }
+
+        static int digital_root(long num)
+        {
+            var t = DigitalRoot(num);
+            return t;
         }
         [Test]
         public void digital_root1()
