@@ -28,10 +28,11 @@ namespace ClassLibrary1
             foreach (var sub in all)
             {
                 string[] ns = sub.Split(",");
-                var namesurname = string.Join(',', ns[1].ToUpper(), ns[0].ToUpper());
+                var namesurname = string.Join(',', ns[0].ToUpper(), ns[1].ToUpper());
                 all2.Add(namesurname);
             }
-            var result = String.Join(" | ", all2.ToArray());
+            var result = String.Join(")(", all2.ToArray());
+            result = "(" + result + ")";
             return result;
         }
         [Test]
@@ -40,7 +41,7 @@ namespace ClassLibrary1
 
             var words = "Fired:Corwill;Wilfred:Corwill;Barney:TornBull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
             var result = UpperAndSort(words);
-            var expected = "ALFRED,CORWILL | FIRED,CORWILL | RAPHAEL,CORWILL | WILFRED,CORWILL | BARNEY,TORNBULL | BETTY,TORNBULL | BJON,TORNBULL";
+            var expected = "(CORWILL,ALFRED)(CORWILL,FIRED)(CORWILL,RAPHAEL)(CORWILL,WILFRED)(TORNBULL,BARNEY)(TORNBULL,BETTY)(TORNBULL,BJON)";
 
             Assert.AreEqual(expected, result);
         }
