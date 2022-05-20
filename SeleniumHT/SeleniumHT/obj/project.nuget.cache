@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6hAsjs3oWP8fSIeCs16ie4W1OvgAllMNmvlzKQq4sqvkbhn8makyXbrWHHpzqZJCv6i9bFsEoaUcxgJHnO8B2A==",
+  "dgSpecHash": "EPtdEbM5WgES74iJ6QsyaL5IqxE8TMj9iN+ZfHwdMEJuoKC/wme46nbmEZ+k8WY63nhyoQRLvJtSubh/u3Hlzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\grish\\source\\repos\\SeleniumHT\\SeleniumHT\\SeleniumHT.csproj",
+  "projectFilePath": "C:\\Users\\grish\\source\\repos\\Albedo-Parona\\Kostiantyn_Gryshchenko\\SeleniumHT\\SeleniumHT\\SeleniumHT.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\grish\\.nuget\\packages\\coverlet.collector\\3.0.2\\coverlet.collector.3.0.2.nupkg.sha512",
     "C:\\Users\\grish\\.nuget\\packages\\microsoft.codecoverage\\17.2.0\\microsoft.codecoverage.17.2.0.nupkg.sha512",

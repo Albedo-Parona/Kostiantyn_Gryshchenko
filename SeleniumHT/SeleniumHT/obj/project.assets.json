@@ -1309,11 +1309,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\grish\\source\\repos\\SeleniumHT\\SeleniumHT\\SeleniumHT.csproj",
+      "projectUniqueName": "C:\\Users\\grish\\source\\repos\\Albedo-Parona\\Kostiantyn_Gryshchenko\\SeleniumHT\\SeleniumHT\\SeleniumHT.csproj",
       "projectName": "SeleniumHT",
-      "projectPath": "C:\\Users\\grish\\source\\repos\\SeleniumHT\\SeleniumHT\\SeleniumHT.csproj",
+      "projectPath": "C:\\Users\\grish\\source\\repos\\Albedo-Parona\\Kostiantyn_Gryshchenko\\SeleniumHT\\SeleniumHT\\SeleniumHT.csproj",
       "packagesPath": "C:\\Users\\grish\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\grish\\source\\repos\\SeleniumHT\\SeleniumHT\\obj\\",
+      "outputPath": "C:\\Users\\grish\\source\\repos\\Albedo-Parona\\Kostiantyn_Gryshchenko\\SeleniumHT\\SeleniumHT\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\grish\\AppData\\Roaming\\NuGet\\NuGet.Config",
