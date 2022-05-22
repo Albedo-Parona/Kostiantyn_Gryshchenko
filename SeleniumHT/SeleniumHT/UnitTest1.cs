@@ -3,21 +3,63 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
+using Allure;
 
 
 
 namespace SeleniumHT
-{
+{   
+   public class UserLogin 
+    {
+        private readonly By _loginInputButton = By.LinkText("Log in");
+        private readonly By _loginName = By.Id("loginusername");
+        private readonly By _loginPass = By.Id("loginpassword");
+        private readonly By _loginEnterButton = By.CssSelector("#logInModal .btn-primary");
+
+        private readonly IWebDriver WebDriver; 
+ 
+        public UserLogin(IWebDriver driver) 
+        { 
+            WebDriver = driver; 
+        } 
+        public void GoToLogin() 
+        { 
+            WebDriver.FindElement(_loginInputButton).Click(); 
+        } 
+        public UserLogin EnterUsername(string username) 
+        { 
+            WebDriver.FindElement(_loginName).SendKeys(username); 
+            return this; 
+        } 
+        public UserLogin EnterPassword(string password) 
+        { 
+            WebDriver.FindElement(_loginPass).SendKeys(password); 
+            return this; 
+        } 
+        public UserLogin SumbitLogin() 
+        { 
+            WebDriver.FindElement(_loginEnterButton).Click(); 
+            return new UserLogin(WebDriver); 
+        } 
+        public UserLogin Login(string username, string password) 
+        { 
+            GoToLogin(); 
+            Thread.Sleep(200); 
+            EnterUsername(username); 
+            Thread.Sleep(200); 
+            EnterPassword(password); 
+            Thread.Sleep(200); 
+            return SumbitLogin(); 
+        } 
+    }
+
     public class Tests
     {
         IWebDriver webDriver;
         ChromeOptions options;
         string[] User_data = { "Onime-power", "12345Kostia" };
         string[] Purchase_data = { "Kostia", "Ukraine", "Kyiv", "111111111", "May", "2022" };
-        private readonly By _loginInputButton = By.LinkText("Log in");
-        private readonly By _loginName = By.Id("loginusername");
-        private readonly By _loginPass = By.Id("loginpassword");
-        private readonly By _loginEnterButton = By.CssSelector("#logInModal .btn-primary");
+       
         private readonly By _Laptop = By.LinkText("Laptops");
         private readonly By _Dell = By.CssSelector("a[href *= 'prod.html?idp_=12']");
         private readonly By _AddToCart = By.CssSelector(" .btn-success");
@@ -29,18 +71,7 @@ namespace SeleniumHT
 
 
 
-        private bool PopUpCheck(By by, IWebDriver a)
-        {
-            try
-            {
-                a.FindElement(by);
-                return true;
-            }
-            catch (NoSuchElementException)
-            {
-                return false;
-            }
-        }
+       
 
 
         public Tests() {
@@ -58,30 +89,16 @@ namespace SeleniumHT
         {
 
 
-            //navigation
+            //navigation User_data[1]
             webDriver.Navigate().GoToUrl("https://www.demoblaze.com/");
 
 
             //login operation
             // identify login button
-            IWebElement lnkLogin = webDriver.FindElement(_loginInputButton);
-            //operation
-            lnkLogin.Click();
-            //Username
-            System.Threading.Thread.Sleep(100);
-            var txtUserName = webDriver.FindElement(_loginName);
-            System.Threading.Thread.Sleep(100);
-            var txtUserPass = webDriver.FindElement(_loginPass);
-            //Assertion op
-            Assert.That(txtUserName.Displayed, Is.True);
-            System.Threading.Thread.Sleep(150);
-            txtUserName.SendKeys(User_data[0]);
-            System.Threading.Thread.Sleep(100);
-            txtUserPass.SendKeys(User_data[1]);
-            System.Threading.Thread.Sleep(100);
-            IWebElement lnkLogin2 = webDriver.FindElement(_loginEnterButton);
-            System.Threading.Thread.Sleep(100);
-            lnkLogin2.Click();
+            UserLogin Log_in=new UserLogin(webDriver);
+            Log_in.Login(User_data[0], User_data[1]);
+
+
 
         }
 
@@ -169,12 +186,11 @@ namespace SeleniumHT
             lnkBPurchase.Click();
 
             //Check TYFYP
-            System.Threading.Thread.Sleep(1000);
-            if (PopUpCheck(_CheckPopUp, webDriver) == true)
-                webDriver.Navigate().GoToUrl("https://free-png.ru/wp-content/uploads/2021/06/free-png.ru-39.png");
-            else webDriver.Navigate().GoToUrl("https://hyperhost.ua/info/storage/uploads/2021/03/wrong%20false%20icon.png");
-            // By.CssSelector("sweetalert")
-
+            var element = webDriver.FindElement(_CheckPopUp);
+            Assert.IsTrue(element.Displayed);
+            System.Threading.Thread.Sleep(3000);
+            webDriver.Quit();
+            
         }
 
     }
