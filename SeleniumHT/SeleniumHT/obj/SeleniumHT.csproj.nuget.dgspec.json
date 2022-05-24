@@ -52,13 +52,13 @@
               "target": "Package",
               "version": "[3.13.3, )"
             },
-            "NUnit.Allure": {
-              "target": "Package",
-              "version": "[1.2.1.1, )"
-            },
             "NUnit3TestAdapter": {
               "target": "Package",
               "version": "[4.2.1, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.1.1, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
@@ -67,6 +67,10 @@
             "Selenium.WebDriver.ChromeDriver": {
               "target": "Package",
               "version": "[101.0.4951.4100, )"
+            },
+            "SeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[1.0.2, )"
             },
             "coverlet.collector": {
               "target": "Package",

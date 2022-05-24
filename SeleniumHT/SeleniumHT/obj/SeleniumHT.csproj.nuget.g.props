@@ -24,6 +24,5 @@
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\grish\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
-    <PkgAspectInjector Condition=" '$(PkgAspectInjector)' == '' ">C:\Users\grish\.nuget\packages\aspectinjector\2.6.0</PkgAspectInjector>
   </PropertyGroup>
 </Project>

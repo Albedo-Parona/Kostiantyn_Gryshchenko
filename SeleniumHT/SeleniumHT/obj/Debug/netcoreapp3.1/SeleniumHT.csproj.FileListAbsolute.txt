@@ -196,8 +196,6 @@ C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\Sele
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\obj\Debug\netcoreapp3.1\SeleniumHT.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\obj\Debug\netcoreapp3.1\SeleniumHT.pdb
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\obj\Debug\netcoreapp3.1\SeleniumHT.genruntimeconfig.cache
-C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\Allure.Commons.dll
-C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\AspectInjector.Broker.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\DnsClient.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\ExtentReports.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.dll
@@ -256,15 +254,15 @@ C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\Sele
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\Microsoft.Net.Http.Headers.dll
-C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\MimeTypesMap.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
-C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\NUnit.Allure.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\RazorEngine.NetCore.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\SharpCompress.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\System.IO.Pipelines.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\runtimes\win-x64\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
 C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\runtimes\win-x86\nativeassets\netcoreapp2.2\aspnetcorev2_inprocess.dll
+C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\WebDriver.Support.dll
+C:\Users\grish\source\repos\Albedo-Parona\Kostiantyn_Gryshchenko\SeleniumHT\SeleniumHT\bin\Debug\netcoreapp3.1\SeleniumExtras.WaitHelpers.dll
