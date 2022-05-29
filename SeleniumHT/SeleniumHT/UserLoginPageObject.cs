@@ -6,11 +6,11 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 namespace SeleniumHT
 {
-    public class UserLogin_PageObject
+    public class UserLoginPageObject
     {
         private readonly IWebDriver webdriver;
 
-        public UserLogin_PageObject(IWebDriver driver)
+        public UserLoginPageObject(IWebDriver driver)
         {
             webdriver = driver;
         }
@@ -32,6 +32,11 @@ namespace SeleniumHT
         public IWebElement FindLoginSubmit()
         {
             return webdriver.FindElement(By.CssSelector("#logInModal .btn-primary"));
+        }
+
+        public By WaitingUntilDissapear()
+        {
+            return By.CssSelector("#logInModal .btn-primary");
         }
     }
 }

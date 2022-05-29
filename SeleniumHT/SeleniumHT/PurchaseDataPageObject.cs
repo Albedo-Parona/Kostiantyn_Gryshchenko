@@ -7,10 +7,10 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumHT
 {
-    public class PurchaseData_PageObject
+    public class PurchaseDataPageObject
     {
         private readonly IWebDriver webdriver;
-        public PurchaseData_PageObject(IWebDriver driver)
+        public PurchaseDataPageObject(IWebDriver driver)
         {
             webdriver = driver;
         }

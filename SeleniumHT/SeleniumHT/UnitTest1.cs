@@ -19,20 +19,16 @@ namespace SeleniumHT
 
         public class Tests
 
-        {   
-            IWebDriver webDriver;
-            ChromeOptions options;            
+        {
+
+            private WebDriver webDriver;
             string[] User_data = { "Onime-power", "12345Kostia" };
             string[] Purchase_data = { "Kostia", "Ukraine", "Kyiv", "111111111", "May", "2022" };
                    
             [SetUp]
             public void Setup()
             {
-                options = new ChromeOptions();
-                options.UnhandledPromptBehavior = UnhandledPromptBehavior.Dismiss; //.accept, .dismiss, etc.
-                webDriver = new ChromeDriver(options);
-                webDriver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
-                webDriver.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(10);
+                webDriver = DriverSingleton.getInstance();
                 webDriver.Navigate().GoToUrl("https://www.demoblaze.com/");
                 UserLogin Log_in = new UserLogin(webDriver);
                 Log_in.Login(User_data[0], User_data[1]);                
@@ -41,10 +37,15 @@ namespace SeleniumHT
             [Test]
             public void Test()
             {
-            Testing tesT = new Testing(webDriver);
+            PlaceOrderContext tesT = new PlaceOrderContext(webDriver);
             tesT.Maintest(Purchase_data);
-            webDriver.Quit();
+            
 
             }
-        }
+            [TearDown]
+            public void TearDown()
+            {
+            webDriver.Quit();
+            }
+    }
     }

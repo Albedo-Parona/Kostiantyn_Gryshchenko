@@ -7,15 +7,15 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumHT
 {
-        public class UserLogin
+        public class UserLogin:
     {
         
-        UserLogin_PageObject element;
+        UserLoginPageObject element;
         private readonly IWebDriver WebDriver;
 
         public UserLogin(IWebDriver driver)
         {
-            element = new UserLogin_PageObject(driver);
+            element = new UserLoginPageObject(driver);
             WebDriver = driver;
         }
         public void GoToLogin()
