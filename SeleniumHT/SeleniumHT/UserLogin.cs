@@ -7,7 +7,7 @@ using OpenQA.Selenium.Chrome;
 
 namespace SeleniumHT
 {
-        public class UserLogin:
+        public class UserLogin
     {
         
         UserLoginPageObject element;
