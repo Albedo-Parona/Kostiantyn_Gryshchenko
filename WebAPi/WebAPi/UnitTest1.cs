@@ -50,7 +50,7 @@ namespace WebAPI
 
             string result = client.Execute(request).Content.ToString();
             var response = JsonConvert.DeserializeObject<Dictionary<string, string>>(result);
-            //Початок перевірки наявності файлу через метадату
+            //Check file downloaddong with Metadata
             RestClient clientCheck = link.getFileMetadata();
             Requests experimentCheck = new Requests();
             RestRequest requestCheck = experimentCheck.getRequest(token);
@@ -67,7 +67,7 @@ namespace WebAPI
             Console.WriteLine(result);
             var responseCheck = JsonConvert.DeserializeObject<Dictionary<string, object>>(resultCheck);
             Console.WriteLine(responseCheck["path_display"]);
-            //Кінець перевірки наявності файлу через метадату в консолі виведено ім'я файлу
+            //End check
 
             Assert.AreEqual(dpPath, response["path_display"]);
         }
@@ -93,7 +93,7 @@ namespace WebAPI
             Console.WriteLine(result);
             var response = JsonConvert.DeserializeObject<Dictionary<string, object>>(result);
             Console.WriteLine(response["path_display"]);
-            //Перевірка по імені та місцезнаходження файла
+            //Check with name and path
             object[] DPinfo = { response["name"], response["path_display"] };
             string[] PCinfo = { file, dropboxPath };
             Assert.AreEqual(PCinfo, DPinfo);
@@ -120,7 +120,7 @@ namespace WebAPI
             var response = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(result);
             Console.WriteLine(response);
             Assert.AreEqual(dropboxPath, response["metadata"]["path_display"]);
-            //Перевірка чи файл був видалений через метадані, адже якщо він був видалений то я не зможу взнати його метадані
+            //Check deleteing with metadata
             try
             {
 
@@ -140,11 +140,10 @@ namespace WebAPI
                 var result1 = client.Execute(request.AddJsonBody(data1)).Content.ToString();
                 Console.WriteLine(result);
                 var response1 = JsonConvert.DeserializeObject<Dictionary<string, object>>(result1);
-                Console.WriteLine(response["path_display"]);
-                //Перевірка по імені та місцезнаходження файла
+                Console.WriteLine(response["path_display"]);                
                 object[] DPinfo = { response1["name"], response1["path_display"] };
                 string[] PCinfo = { file, dropboxPath };
-                //Assert.AreEqual(PCinfo, DPinfo);
+                
 
             }
             catch
