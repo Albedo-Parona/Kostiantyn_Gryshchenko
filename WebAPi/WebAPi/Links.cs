@@ -11,14 +11,14 @@ using System.Collections.Generic;
 using System.IO;
 using Newtonsoft.Json.Linq;
 
-namespace WebAPi
+namespace WebAPI
 {
     public class Links
-    {       
+    {
 
         public Links()
         {
-            
+
         }
 
         public RestClient getMetadata()
@@ -30,6 +30,7 @@ namespace WebAPi
         public RestClient Upload()
         {
             RestClient client = new RestClient("https://content.dropboxapi.com/2/files/upload");
+            
             return client;
         }
 
@@ -42,6 +43,11 @@ namespace WebAPi
         public RestClient Delete()
         {
             RestClient client = new RestClient("https://api.dropboxapi.com/2/files/delete_v2");
+            return client;
+        }
+        public RestClient CheckExist()
+        {
+            RestClient client = new RestClient("https://api.dropboxapi.com/2/files/list_folder");
             return client;
         }
     }
